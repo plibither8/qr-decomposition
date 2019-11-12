@@ -12,6 +12,11 @@ for i in range(m):
 
 A = np.array(A)
 
+def mat_round(M):
+    for i in range(len(M)):
+        for j in range(len(M[i])):
+            M[i][j] = round(M[i][j], 5)
+
 def getQ(M):
     Q = []
     M = np.transpose(M)
@@ -33,6 +38,9 @@ def getR(M, Q):
 
 Q = getQ(A)
 R = getR(A, Q)
+
+mat_round(Q)
+mat_round(R)
 
 print("\nQ:\n", Q)
 print("\nR:\n", R)
